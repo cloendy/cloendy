@@ -1,0 +1,70 @@
+
+{/* <Popconfirm
+              title={formatMessage({
+                id: "pages.dataset.table.item.delete.confirm.title",
+                defaultMessage: 'Delete the item'
+              })}
+              description={formatMessage({
+                id: "pages.dataset.table.item.delete.confirm.description",
+                defaultMessage: 'Are you sure to delete this item? This action cannot be undone.'
+              })}
+              okText={formatMessage({
+                id: "pages.dataset.table.item.delete.confirm.oktext",
+                defaultMessage: 'Yes'
+              })}
+              cancelText={formatMessage({
+                id: "pages.dataset.table.item.delete.confirm.canceltext",
+                defaultMessage: 'No'
+              })}
+              onConfirm={async () => {
+                const res = await usingCheck(record.id);
+                if (!res.is_using) {
+                  setLoading(true);
+                  try {
+                    await deleteDataSet(record.id);
+                    fetchData();
+                    messageApi.open({
+                      type: 'success',
+                      content: formatMessage({
+                        id: "pages.dataset.table.item.delete.result.success",
+                        defaultMessage: 'Deletion successful'
+                      }),
+                    });
+                  } catch (error: any) {
+                    messageApi.open({
+                      type: 'error',
+                      content: error.message,
+                    });
+                  } finally {
+                    setLoading(false);
+                  }
+                } else {
+                  messageApi.open({
+                    type: 'error',
+                    content: formatMessage({
+                      id: "pages.dataset.table.item.delete.result.error",
+                      defaultMessage: 'Cannot delete because it is in use'
+                    }),
+                  });
+                }
+              }}
+            >
+              <Button type="link" style={{ flex: '1 1 30%' }}>
+                {formatMessage({
+                  id: "pages.dataset.table.item.delete",
+                  defaultMessage: 'Delete'
+                })}
+              </Button>
+            </Popconfirm> */}
+
+
+配置
+export default {
+  'pages.dataset.table.item.delete': '删除',
+  'pages.dataset.table.item.delete.confirm.title': '确认删除',
+  'pages.dataset.table.item.delete.confirm.description': '您确定要删除这个项吗？此操作无法撤销。',
+  'pages.dataset.table.item.delete.confirm.oktext': '删除',
+  'pages.dataset.table.item.delete.confirm.canceltext': '取消',
+  'pages.dataset.table.item.delete.result.success': '删除成功',
+  'pages.dataset.table.item.delete.result.error': '使用中，无法删除',
+};
