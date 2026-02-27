@@ -1,0 +1,11 @@
+获取Github分支合并时File Changed的文件目录
+浏览器F12, 控制台粘贴
+
+'''
+console.log(
+    [...document.querySelectorAll('ul[role="tree"][aria-label="File Tree"] li')]
+.filter(li => !li.querySelector('ul')
+.map(li => li.id)
+.join('\n')
+);
+'''
