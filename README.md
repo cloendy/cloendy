@@ -6,6 +6,11 @@
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 
+doc/
+计算机技术相关知识，部分来源与网络
+src/
+少量代码练习
+
 <!---
 cloendy/cloendy is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
